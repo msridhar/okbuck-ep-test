@@ -26,4 +26,11 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    annotationProcessor 'com.google.errorprone:error_prone_core:2.3.3'
+}
+
+compileJava {
+    options.compilerArgs << '-XDcompilePolicy=simple'
+    options.compilerArgs << '-Xplugin:ErrorProne -Xep:RemoveUnusedImports:ERROR'
 }

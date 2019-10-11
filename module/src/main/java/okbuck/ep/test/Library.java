@@ -3,6 +3,8 @@
  */
 package okbuck.ep.test;
 
+import com.google.common.collect.ImmutableList.Builder;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
