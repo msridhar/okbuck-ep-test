@@ -15,6 +15,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
     google()
+    mavenCentral()
 }
 
 dependencies {
@@ -27,10 +28,8 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
-    annotationProcessor 'com.google.errorprone:error_prone_core:2.3.3'
+    implementation 'com.google.auto.value:auto-value-annotations:1.6.6'
+
+    annotationProcessor 'com.google.auto.value:auto-value:1.6.6'
 }
 
-compileJava {
-    options.compilerArgs << '-XDcompilePolicy=simple'
-    options.compilerArgs << '-Xplugin:ErrorProne -Xep:RemoveUnusedImports:ERROR'
-}
